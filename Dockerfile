@@ -1,2 +1,2 @@
 FROM hello
-LABEL my-hello
+LABEL maintener="Fabio Mitrano"

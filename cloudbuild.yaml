@@ -17,5 +17,6 @@ steps:
   - 'europe-west1-b'
   - '--platform'
   - 'managed'
+  - '--allow-unauthenticated'
 images:
 - 'gcr.io/$PROJECT_ID/docker-build-test2:$COMMIT_SHA'

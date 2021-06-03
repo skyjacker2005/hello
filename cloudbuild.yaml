@@ -29,6 +29,6 @@ steps:
   - '--max-instances'
   - '1'
   - '--memory'
-  - '512m'
+  - '512Mi'
 images:
 - 'gcr.io/$PROJECT_ID/docker-build-test2:${_ENVIRONMENT}-${_VERSION}'

@@ -11,7 +11,7 @@ steps:
    args:
    - 'run'
    - 'deploy'
-   - 'SERVICE-NAME'
+   - 'docker-build-test2'
    - '--image'
    - 'gcr.io/rapsodoo-test/docker-build-test2:$COMMIT_SHA'
    - '--region'

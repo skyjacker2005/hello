@@ -13,7 +13,7 @@ steps:
   - 'docker-build-test2'
   - '--image'
   - 'gcr.io/$PROJECT_ID/docker-build-test2:$COMMIT_SHA'
-  - '--region'
+  - '--zone'
   - 'europe-west1-b'
   - '--platform'
   - 'managed'

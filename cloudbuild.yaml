@@ -22,5 +22,13 @@ steps:
   - '--platform'
   - 'managed'
   - '--allow-unauthenticated'
+  - '--cpu'
+  - '1'
+  - '--min-instances'
+  - '1'
+  - '--max-instances'
+  - '1'
+  - '--memory'
+  - '512m'
 images:
 - 'gcr.io/$PROJECT_ID/docker-build-test2:${_ENVIRONMENT}-${_VERSION}'

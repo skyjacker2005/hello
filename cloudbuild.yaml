@@ -6,8 +6,17 @@ substitutions:
 
 steps:
 # Create the postgres db instance
+#- name: 'gcr.io/cloud-builders/gcloud'
+#  args: ['sql', 'instances', 'create', '${_PROJECT}-${_ENVIRONMENT}', '--database-version=POSTGRES_11', '--region=${_REGION}']
+# Stop the postgres db instance
+#- name: 'gcr.io/cloud-builders/gcloud'
+#  args: ['sql', 'instances', 'patch', 'odoo-test1', 'odoo-test1', 'never']
+# Backup the postgres db instance
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['sql', 'instances', 'create', '${_PROJECT}-${_ENVIRONMENT}', '--database-version=POSTGRES_11', '--region=${_REGION}']
+  args: ['sql', 'backups', 'create', '--instance=odoo-test1', '--description=pre-${_VERSION}', '--location=${_REGION}']
+# Start the postgres db instance
+#- name: 'gcr.io/cloud-builders/gcloud'
+#  args: ['sql', 'instances', 'patch', 'odoo-test1', 'odoo-test1', 'always']
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/docker-build-test2:${_PROJECT}-${_ENVIRONMENT}-${_VERSION}', '.' ]

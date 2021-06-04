@@ -12,8 +12,8 @@ steps:
 #- name: 'gcr.io/cloud-builders/gcloud'
 #  args: ['sql', 'instances', 'patch', 'odoo-test1', 'odoo-test1', 'never']
 # Backup the postgres db instance
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['sql', 'backups', 'create', '--instance=odoo-test1', '--description=pre-${_VERSION}', '--location=${_REGION}']
+#- name: 'gcr.io/cloud-builders/gcloud'
+#  args: ['sql', 'backups', 'create', '--instance=odoo-test1', '--description=pre-${_VERSION}', '--location=${_REGION}']
 # Start the postgres db instance
 #- name: 'gcr.io/cloud-builders/gcloud'
 #  args: ['sql', 'instances', 'patch', 'odoo-test1', 'odoo-test1', 'always']
